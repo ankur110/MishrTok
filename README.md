@@ -6,7 +6,7 @@
 
 **MishrTok** (मिश्र = Mixed) – A custom Byte Pair Encoding (BPE) tokenizer optimized for **code-mixed Romanized Hinglish** and **Devanagari Hindi**.
 
-Trained on a large Hinglish corpus with intelligent regex-based pre-tokenization, this 32k tokenizer achieves **~14.1% better token efficiency** than OpenAI's state-of-the-art `o200k_base` (GPT-4o) tokenizer on diverse Hinglish and Hindi text — all with a vocab size 6× smaller.
+Trained on a large Hinglish corpus with intelligent regex-based pre-tokenization, this 32k tokenizer achieves **~14.1% better token efficiency** than OpenAI's state-of-the-art `o200k_base` (GPT-4o) tokenizer on diverse Hinglish and Hindi text — all with a smaller vocab size.
 
 This project is heavily inspired by **Andrej Karpathy's** ["Let's build the GPT tokenizer"](https://www.youtube.com/watch?v=kCc8FmEb1nY) and his clean [`minbpe`](https://github.com/karpathy/minbpe) implementation.
 
@@ -59,11 +59,10 @@ Hinglish-Tokenizer/
 ├── src/
 │   ├── HinglishBPE.py            # Core tokenizer class (Train/Encode/Decode)
 │   └── training.py               # Training script
-├── inference.py                  # Comprehensive benchmark vs OpenAI
+├── inference.ipynb                  # Comprehensive benchmark vs OpenAI
 └── README.md
 
 ```
-
 ## 🛠️ Quick Start
 
 ### 1. Installation
@@ -101,11 +100,12 @@ assert text == decoded
 
 ### 3. Running Benchmarks
 
-To reproduce the efficiency results on your own machine:
+The benchmarking logic is provided in a Jupyter Notebook for interactive analysis.
+
+Open the notebook:
 
 ```bash
-python inference.py
-
+jupyter notebook inference.ipynb
 ```
 
 ### 4. Training from Scratch
